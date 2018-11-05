@@ -4,9 +4,9 @@ $(document).ready(function() {
         slidesPerView: 1,
         spaceBetween: 30,
         mousewheel: true,
-        pagination: {
-            el: '.section-about_slider .swiper-pagination',
-            clickable: true,
+        navigation: {
+            nextEl: '.section-about_slider .swiper-button-next',
+            prevEl: '.section-about_slider .swiper-button-prev',
         },
         breakpoints: {
             1200: {
