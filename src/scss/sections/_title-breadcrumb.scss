@@ -1,0 +1,27 @@
+.title-breadcrumb-section {
+	min-height: 150px;
+	background: url(../images/title-breadcrumb-bg.png) no-repeat;
+	background-size: cover;
+	@media(max-width: 575px) {
+		padding: 0 10px;
+	}
+	h1 {
+		font-size: 26px;
+		color: $black;
+	}
+	.breadcrumb {
+		background: transparent;
+		padding: 0;
+		margin: 0; 
+		li {
+			text-transform: uppercase;
+			color: #888888;
+			&+:before {
+				content: '>';
+			}
+			a {
+				color: $base-color;
+			}
+		}
+	}
+}

@@ -1,0 +1,24 @@
+// Colors
+$base-color: #3e3e3e;
+$grey: #e9e9e9;
+$black: #222;
+$white: #fff;
+$blue: #00f;
+$red: #e24545;
+// Body
+$base-font-size: 15px !default;
+$base-line-height: 1.2 !default;
+$base-text-color: $base-color !default;
+$base-font-family: 'Poppins', sans-serif !default;
+$base-background-color: $white !default;
+//Fonts
+$Arvo: 'Arvo', serif;
+$Roboto: 'Roboto', sans-serif;
+$Poppins: 'Poppins', sans-serif;
+//
+%wr{
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
