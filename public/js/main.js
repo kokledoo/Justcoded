@@ -1,10 +1,12 @@
 $(document).ready(function() {
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 4,
-        loop: true,
-        spaceBetween: 20,
-        autoplay: {
-            delay: 5000,
+    var swiper = new Swiper('.section-about_slider .swiper-container', {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 30,
+        mousewheel: true,
+        pagination: {
+            el: '.section-about_slider .swiper-pagination',
+            clickable: true,
         },
         breakpoints: {
             1200: {
@@ -32,10 +34,14 @@ $(document).ready(function() {
         }, false);
         });
     }, false);
-    $('body').on('click', '.delete-item', function(e) {
-        $(this).closest('.wishlist-cart').remove();
-    });
-    $('body').on('click', '.clear-list-btn', function(e) {
-        $('.cards-holder').html("<p class='empty-list text-uppercase'>your wishlist is empty</p>");
+    $('.btn-see-all').click(function(e){
+        e.preventDefault();
+        $.getJSON('ajax/example.json', {}, function(json){
+            $('#portfolio').html('');
+            $('#portfolio').append('To: '   + json.note.to + '<br/>')
+                .append('From: ' + json.note.from + '<br/>')
+                .append('<b>'    + json.note.heading + '</b><br/>')
+                .append(           json.note.body + '<br/>');
+        });
     });
 })
