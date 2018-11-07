@@ -1,0 +1,101 @@
+.section-portfolio {
+    padding: 93px 0 100px;
+    @media (max-width: 768px) {
+        padding: 40px 0;
+    }
+    h3 {
+        font-size: 25px;
+        font-family: $Arvo;
+        font-weight: bold;
+        line-height: 50px;
+        text-align: center;
+    }
+    .col {
+        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+    }
+    &>.wr {
+        @extend %wr;
+        margin: 45px auto 63px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: center;
+        @media (max-width: 768px) {
+            justify-content: center;
+            margin: 45px auto 15px;
+        }
+        .item-block {
+            margin: 0 0 30px;
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.3);
+            position: relative;
+            @media (max-width: 768px) {
+                margin: 0 auto 30px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+            }
+            .hover-container {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s;
+                .favorite-block {
+                    height: calc(100% - 100px);
+                    background: $base-color;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    opacity: .5;
+                    .eye-icon,
+                    .heart-icon {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        margin: 0 14px;
+                        box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.6);
+                    }
+                    .eye-icon {
+                        background: url(../../images/eye.png)no-repeat center / cover;
+                    }
+                    .heart-icon {
+                        background: url(../../images/heart.png)no-repeat center / cover;
+                    }
+                }
+                .article-block {
+                    background: #d3d3d3;
+                    text-align: left;
+                    padding: 28px 24px;
+                    min-height: 100px;
+                    h5 {
+                        font-size: 18px;
+                        font-weight: bold;
+                        font-family: $Arvo;
+                    }
+                    p {
+                        font-size: 15px;
+                        font-family: $Roboto;
+                        font-style: italic;
+                    }
+                }
+            }
+            &:hover {
+                .hover-container {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    .see-all {
+        @extend %btn;
+    }
+}

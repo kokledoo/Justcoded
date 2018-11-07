@@ -17,6 +17,8 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     size = require('gulp-size'),
     ghPages = require('gulp-gh-pages');
+    os = require('os');
+    os.tmpDir = os.tmpdir;
 
 
 gulp.task('styles', function() {
