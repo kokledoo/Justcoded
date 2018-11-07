@@ -11,6 +11,9 @@
 			padding: 40px 15px;
 			flex-direction: column;
 		}
+		@media (min-width: 768px) {
+			flex-direction: row;
+		}
 		.col{
 			width: 25%;
 			padding-right: 30px;

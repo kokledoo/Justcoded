@@ -9,6 +9,9 @@
         font-weight: bold;
         line-height: 50px;
         text-align: center;
+        @media (max-width: 320px) {
+            font-size: 20px;
+        }
     }
     .col {
         flex-direction: column;

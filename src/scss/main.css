@@ -98,6 +98,11 @@ a, a:hover {
       font-weight: 400;
       display: block;
       position: relative; }
+      @media (max-width: 320px) {
+        #header .header-menu_wrapper .logo {
+          font-size: 32px;
+          height: 42px;
+          line-height: 36px; } }
       #header .header-menu_wrapper .logo:before {
         content: '';
         display: block;
@@ -107,6 +112,12 @@ a, a:hover {
         width: 14px;
         height: 4px;
         background: #3e3e3e; }
+        @media (max-width: 320px) {
+          #header .header-menu_wrapper .logo:before {
+            bottom: 8px;
+            left: 5px;
+            width: 14px;
+            height: 3px; } }
     #header .header-menu_wrapper .header-menu_container {
       display: flex;
       align-items: center; }
@@ -141,7 +152,7 @@ a, a:hover {
             right: 0;
             margin: 0 auto;
             text-align: center;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 10px; } }
         @media (max-width: 768px) {
           #header .header-menu_wrapper .header-menu_container.header-menu_active nav a {
@@ -209,6 +220,9 @@ a, a:hover {
       .section-footer > .wr {
         padding: 40px 15px;
         flex-direction: column; } }
+    @media (min-width: 768px) {
+      .section-footer > .wr {
+        flex-direction: row; } }
     .section-footer > .wr .col {
       width: 25%;
       padding-right: 30px; }
@@ -312,6 +326,14 @@ a, a:hover {
   #title .btn {
     margin: 0 14px;
     display: inline-block; }
+    @media (max-width: 375px) {
+      #title .btn {
+        margin: 0 10px;
+        width: 150px; } }
+    @media (max-width: 320px) {
+      #title .btn {
+        margin: 0 5px;
+        width: 130px; } }
   #title:before, #title:after {
     content: '';
     position: absolute;
@@ -339,6 +361,9 @@ a, a:hover {
       font-size: 35px;
       font-weight: 400;
       margin-bottom: 30px; }
+      @media (max-width: 320px) {
+        #title .header-content h2 {
+          font-size: 30px; } }
     #title .header-content .descr {
       max-width: 510px;
       margin: 0 auto 50px; }
@@ -373,16 +398,34 @@ a, a:hover {
     font-size: 15px;
     font-weight: 400;
     line-height: 20px; }
+    @media (max-width: 414px) {
+      .section-about .section-about_title {
+        padding: 40px 30px; } }
+    @media (max-width: 375px) {
+      .section-about .section-about_title {
+        padding: 40px 30px; } }
+    @media (max-width: 320px) {
+      .section-about .section-about_title {
+        padding: 40px 26px; } }
     .section-about .section-about_title span {
       color: #3e3e3e;
       font-family: "Arvo", serif;
       font-size: 30px;
       font-weight: 700;
       padding-right: 8px; }
+      @media (max-width: 320px) {
+        .section-about .section-about_title span {
+          font-size: 24px; } }
   .section-about .section-about_slider {
     max-width: 476px;
     max-height: 224px;
     box-sizing: border-box; }
+    @media (max-width: 414px) {
+      .section-about .section-about_slider {
+        padding: 0 30px; } }
+    @media (max-width: 320px) {
+      .section-about .section-about_slider {
+        padding: 0 20px; } }
     .section-about .section-about_slider h4 {
       font-family: "Arvo", serif;
       font-size: 20px;
@@ -420,6 +463,9 @@ a, a:hover {
     font-weight: bold;
     line-height: 50px;
     text-align: center; }
+    @media (max-width: 320px) {
+      .section-portfolio h3 {
+        font-size: 20px; } }
   .section-portfolio .col {
     flex-direction: column;
     display: flex;

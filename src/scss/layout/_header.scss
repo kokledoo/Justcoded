@@ -13,6 +13,11 @@
 		height: 100%;
 		justify-content: space-between;
 		.logo {
+			@media (max-width: 320px) {
+				font-size: 32px;
+				height: 42px;
+				line-height: 36px
+			}
 			color: #3e3e3e;
 			font-family: $Arvo;
 			font-size: 40px;
@@ -22,6 +27,12 @@
 			display: block;
 			position: relative;
 			&:before {
+				@media (max-width: 320px) {
+					bottom: 8px;
+					left: 5px;
+					width: 14px;
+					height: 3px;
+				}
 				content: '';
 				display: block;
 				position: absolute;
@@ -70,7 +81,7 @@
 						right: 0;
 						margin: 0 auto;
 						text-align: center;
-						background: rgba(255,255,255,0.8);
+						background: rgba(255,255,255,0.9);
 						border-radius: 10px;
 					}
 				    a {
