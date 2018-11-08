@@ -67,11 +67,16 @@
         .swiper-container {
             width: 100%;
             height: 100%;
+            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+                width: 476px !important;
+                height: 224px !important;
+            }
         }
         .swiper-slide {
             font-size: 15px;
             height: auto;
             box-sizing: border-box;
+            -webkit-box-sizing: border-box;
             padding: 0 0 30px;
         }
         .swiper-button-next,

@@ -3,11 +3,11 @@ $(document).ready(function() {
         direction: 'vertical',
         slidesPerView: 'auto',
         freeMode: true,
-        mousewheel: true,
         navigation: {
             nextEl: '.section-about_slider .swiper-button-next',
             prevEl: '.section-about_slider .swiper-button-prev',
         },
+        mousewheel: true,
     });
     $('#sb_form_submit').click(
         function validate(){

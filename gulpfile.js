@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    less = require('gulp-less'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
@@ -18,22 +19,38 @@ var gulp = require('gulp'),
     size = require('gulp-size'),
     ghPages = require('gulp-gh-pages');
     os = require('os');
+    merge = require('merge-stream');
     os.tmpDir = os.tmpdir;
 
-
 gulp.task('styles', function() {
-  gulp.src('./src/scss/**/*.scss')
+  var cssStream = gulp.src([
+      './node_modules/swiper/dist/css/swiper.css'
+    ])
+    .pipe(concat('css-files.css'));
+
+  var scssStream = gulp.src([
+      './src/scss/**/*.scss'
+    ])
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-    .pipe(gulp.dest('public/css'))
-    .pipe(rename({suffix: '.min'}))
+    .pipe(concat('scss-files.scss'))
+  ;
+
+  var mergedStream = merge(cssStream,scssStream)
+    .pipe(concat('main.min.css'))
     .pipe(minifycss())
     .pipe(gulp.dest('public/css'))
     .pipe(browserSync.reload({stream:true}));
+
+  return mergedStream;
 });
 
 gulp.task('scripts', function() {
-  return gulp.src(['./src/javascripts/**/*.js'])
+  return gulp.src([
+      './node_modules/jquery/dist/jquery.min.js',
+      './node_modules/swiper/dist/js/swiper.min.js',
+      './src/javascripts/main.js'
+    ])
     .pipe(plumber())
     .pipe(concat('main.js'))
     .pipe(gulp.dest('public/js'))
