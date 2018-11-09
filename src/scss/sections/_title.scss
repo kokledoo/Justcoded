@@ -44,14 +44,18 @@
       font-family: $Arvo;
       font-size: 40px;
       font-weight: 700;
+      @media (max-width: 568px) {
+        font-size: 30px;
+      }
     }
     h2 {
       font-family: $Arvo;
       font-size: 35px;
       font-weight: 400;
       margin-bottom: 30px;
-      @media (max-width: 320px) {
-        font-size: 30px;
+      @media (max-width: 568px) {
+        font-size: 26px;
+        margin: 10px 0;
       }
     }
     .descr {
@@ -59,6 +63,10 @@
       margin: 0 auto 50px;
       @media (max-width: 768px) {
         max-width: 95%;
+      }
+      @media (max-width: 568px) {
+        max-width: 95%;
+        margin: 0 auto 10px;
       }
     }
   }
